@@ -1,0 +1,80 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: terraform-github-iam
+
+# Tags of this project
+tags:
+  - github
+  - github
+  - iam
+
+# Categories of this project
+categories:
+  - terraform-modules/github
+
+company:
+  name: hadenlabs
+  description: |-
+    company labs
+  url: https://hadenlabs.com
+  github: https://github.com/hadenlabs
+  email: support@hadenlabs.com
+
+copyright:
+  name: Hadenlabs
+  url: https://hadenlabs.com
+
+email:
+  support: support@hadenlabs.com
+
+# Logo for this project
+#logo: docs/logo.png
+
+# License of this project
+license: 'Apache2'
+
+# Canonical GitHub repo
+github_repo: hadenlabs/terraform-github-iam
+
+# Badges to display
+badges:
+  - name: 'Build Status'
+    image: 'https://travis-ci.org/hadenlabs/terraform-github-iam.svg?branch=main'
+    url: 'https://travis-ci.org/hadenlabs/terraform-github-iam'
+  - name: 'Latest Release'
+    image: 'https://img.shields.io/github/release/hadenlabs/terraform-github-iam.svg'
+    url: 'https://travis-ci.org/hadenlabs/terraform-github-iam/releases'
+
+# Short description of this project
+description: |-
+  Terraform module to provision an github iam.
+
+# How to use this project
+usage: |-
+  ```hcl
+    module "main" {
+      source = "hadenlabs/iam/github"
+      version = "0.0.0"
+
+      providers {
+        github = github
+      }
+
+    }
+  ```
+
+  Full working example can be found in [example](./example) folder.
+
+include:
+  - 'docs/include/targets.md'
+  - 'docs/include/terraform.md'
+
+# Contributors to this project
+contributors:
+  - name: 'Luis Mayta'
+    github: 'luismayta'
