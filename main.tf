@@ -1,5 +1,5 @@
 resource "github_team" "this" {
-  count       = length(var.groups)
+  count       = length(var.teams)
   name        = element(var.teams, count.index).name
   description = element(var.teams, count.index).description
   privacy     = element(var.teams, count.index).privacy
