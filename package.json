@@ -1,6 +1,6 @@
 {
   "name": "@hadenlabs/terraform-github-iam",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "terraform-github-iam for hadenlabs",
   "repository": "ssh://git@github.com/hadenlabs/terraform-github-iam.git",
   "author": "Luis Mayta <slovacus@gmail.com>",
