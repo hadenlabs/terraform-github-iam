@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. This file uses change log convention from [keep a CHANGELOG](http://keepachangelog.com/en/0.3.0/).
 
+<a name="0.1.1"></a>
+
+## [0.1.1](https://github.com/hadenlabs/terraform-github-iam/compare/0.1.0...0.1.1)
+
+> 2021-02-12
+
+### Bug Fixes
+
+- load providers for example (0.1.1)
+- attributes load github team (0.1.1)
+
 <a name="0.1.0"></a>
 
 ## 0.1.0
