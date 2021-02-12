@@ -59,7 +59,7 @@ usage: |-
   ```hcl
     module "main" {
       source = "hadenlabs/iam/github"
-      version = "0.0.0"
+      version = "0.1.0"
 
       providers {
         github = github
