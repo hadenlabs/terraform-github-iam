@@ -5,6 +5,11 @@ output "teams" {
 
 output "members" {
   description = "instance of members github"
+  value       = github_membership.this
+}
+
+output "team_members" {
+  description = "instance of members for team github"
   value       = github_team_membership.this
 }
 
