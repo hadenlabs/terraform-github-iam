@@ -1,3 +1,9 @@
+resource "github_membership" "this" {
+  count    = length(var.members)
+  username = element(var.members, count.index).username
+  role     = element(var.members, count.index).role
+}
+
 resource "github_team" "this" {
   count       = length(var.teams)
   name        = element(var.teams, count.index).name
@@ -10,7 +16,7 @@ resource "github_team_membership" "this" {
   team_id    = element(github_team.this, index(github_team.this.*.name, element(var.members, count.index).team)).id
   username   = element(var.members, count.index).username
   role       = element(var.members, count.index).role
-  depends_on = [github_team.this]
+  depends_on = [github_team.this, github_membership.this]
 }
 
 resource "github_team_repository" "this" {
