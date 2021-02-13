@@ -10,7 +10,6 @@ name: terraform-github-iam
 # Tags of this project
 tags:
   - github
-  - github
   - iam
 
 # Categories of this project
