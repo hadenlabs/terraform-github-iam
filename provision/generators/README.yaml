@@ -35,7 +35,7 @@ email:
 #logo: docs/logo.png
 
 # License of this project
-license: 'Apache2'
+license: 'APACHE2'
 
 # Canonical GitHub repo
 github_repo: hadenlabs/terraform-github-iam
@@ -63,11 +63,13 @@ usage: |-
       providers = {
         github = github
       }
-
     }
   ```
 
   Full working example can be found in [example](./example) folder.
+
+examples:
+  - 'docs/examples/common.md'
 
 include:
   - 'docs/include/targets.md'
