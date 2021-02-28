@@ -130,7 +130,7 @@ repos:
         entry: node_modules/eslint/bin/eslint.js --config=.github/linters/.eslintrc.js --ignore-path=.github/linters/.eslintignore --color
         args:
           - '--fix'
-        files: \.(ts|tsx|js|jsx)$
+        files: \.(js|jsx|ts|tsx|mjs|d.ts)$
       - id: stylint
         name: stylint
         language: system
