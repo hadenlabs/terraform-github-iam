@@ -46,7 +46,7 @@ variable "members" {
       role     = "maintainer"
     },
     {
-      team     = "frontend"
+      team     = "backend"
       username = "luismayta"
       role     = "maintainer"
     },
@@ -62,12 +62,12 @@ variable "permissions" {
   }))
   default = [
     {
-      team       = "sysadmins"
-      repository = "repoitory-name"
+      team       = "backend"
+      repository = "repository-name"
       permission = "admin"
     },
     {
-      team       = "leaders"
+      team       = "developers"
       repository = "repository-name"
       permission = "admin"
     },
