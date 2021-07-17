@@ -7,27 +7,6 @@
 # Name of this project
 name: terraform-github-iam
 
-# Tags of this project
-tags:
-  - github
-  - iam
-
-# Categories of this project
-categories:
-  - terraform-modules/github
-
-company:
-  name: hadenlabs
-  description: |-
-    company labs
-  url: https://hadenlabs.com
-  github: https://github.com/hadenlabs
-  email: support@hadenlabs.com
-
-copyright:
-  name: Hadenlabs
-  url: https://hadenlabs.com
-
 email:
   support: support@hadenlabs.com
 
@@ -35,21 +14,26 @@ email:
 #logo: docs/logo.png
 
 # License of this project
-license: 'APACHE2'
+license: 'LGPL-3.0'
 
 # Canonical GitHub repo
 github_repo: hadenlabs/terraform-github-iam
 
 # Badges to display
 badges:
-  - name: 'Build Status'
-    image: 'https://travis-ci.org/hadenlabs/terraform-github-iam.svg?branch=main'
-    url: 'https://travis-ci.org/hadenlabs/terraform-github-iam'
-  - name: 'Latest Release'
-    image: 'https://img.shields.io/github/release/hadenlabs/terraform-github-iam.svg'
-    url: 'https://travis-ci.org/hadenlabs/terraform-github-iam/releases'
+  - name: GitHub release
+    image: https://img.shields.io/github/release/hadenlabs/terraform-github-iam?style=flat-square
+    url: https://github.com/hadenlabs/terraform-github-iam/releases/latest
+  - name: Lint
+    image: https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-iam/lint-code
+    url: https://github.com/hadenlabs/terraform-github-iam/actions?workflow=lint-code
+  - name: Conventional Commits
+    image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
+    url: https://conventionalcommits.org
+  - name: KeepAChangelog
+    image: https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735
+    url: https://keepachangelog.com
 
-# Short description of this project
 description: |-
   Terraform module to provision an github iam.
 
@@ -74,8 +58,3 @@ examples:
 include:
   - 'docs/include/targets.md'
   - 'docs/include/terraform.md'
-
-# Contributors to this project
-contributors:
-  - name: 'Luis Mayta'
-    github: 'luismayta'
