@@ -1,16 +1,3 @@
-variable "github" {
-  description = "vars for github"
-  sensitive   = true
-  type = object({
-    token        = string
-    organization = string
-  })
-  default = {
-    token        = "my-token-github"
-    organization = "organization-name"
-  }
-}
-
 variable "teams" {
   description = "This teams to create"
   type = list(object({
