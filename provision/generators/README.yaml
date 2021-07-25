@@ -21,12 +21,15 @@ github_repo: hadenlabs/terraform-github-iam
 
 # Badges to display
 badges:
-  - name: GitHub release
-    image: https://img.shields.io/github/release/hadenlabs/terraform-github-iam?style=flat-square
-    url: https://github.com/hadenlabs/terraform-github-iam/releases/latest
+  - name: Latest Release
+    image: https://img.shields.io/github/release/hadenlabs/terraform-github-iam
+    url: https://github.com/hadenlabs/terraform-github-iam/releases
   - name: Lint
     image: https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-iam/lint-code
     url: https://github.com/hadenlabs/terraform-github-iam/actions?workflow=lint-code
+  - name: pre-commit
+    image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+    url: https://github.com/pre-commit/pre-commit
   - name: Conventional Commits
     image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
     url: https://conventionalcommits.org
@@ -34,6 +37,7 @@ badges:
     image: https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735
     url: https://keepachangelog.com
 
+# Short description of this project
 description: |-
   Terraform module to provision an github iam.
 
@@ -50,7 +54,7 @@ usage: |-
     }
   ```
 
-  Full working example can be found in [example](./example) folder.
+  Full working examples can be found in [examples](./examples) folder.
 
 examples:
   - 'docs/examples/common.md'
