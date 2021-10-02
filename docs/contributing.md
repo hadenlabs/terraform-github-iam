@@ -1,3 +1,7 @@
+<!-- Space: TerraformGithubIam -->
+<!-- Parent: Project -->
+<!-- Title: How To Contribute -->
+
 # How To Contribute
 
 Contributions to terraform-github-iam are welcome.
