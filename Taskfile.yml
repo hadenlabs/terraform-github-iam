@@ -1,22 +1,28 @@
 version: '3'
 
 includes:
+  changelog: ./provision/task/changelog.yml
   python: ./provision/task/python.yml
+  yarn: ./provision/task/yarn.yml
   git: ./provision/task/git.yml
   go: ./provision/task/go.yml
-  yarn: ./provision/task/yarn.yml
   docs: ./provision/task/docs.yml
+  docker: ./provision/task/docker.yml
   gitflow: ./provision/task/gitflow.yml
   version: ./provision/task/version.yml
-  docker: ./provision/task/docker.yml
-  changelog: ./provision/task/changelog.yml
+  mark: ./provision/task/mark.yml
+  prettier: ./provision/task/prettier.yml
   sonar: ./provision/task/sonar.yml
 
 env:
   DOCKER:
-    sh: docker -v
+    sh: docker --version 2> /dev/null || echo "not exist"
   PYTHON:
-    sh: python --version
+    sh: python --version 2> /dev/null || echo "not exist"
+  GO:
+    sh: go version 2> /dev/null || echo "not exist"
+  NODE:
+    sh: node --version 2> /dev/null || echo "not exist"
   APP_TAG:
     sh: git describe --tags $(git rev-list --tags --max-count=1) 2> /dev/null || echo "0.0.0"
   README_YAML: provision/generators/README.yaml
@@ -39,6 +45,7 @@ vars:
     .secrets
     TMP_CHANGELOG.md
     .task
+    *.lock.hcl
 
 tasks:
   default:
@@ -55,7 +62,10 @@ tasks:
   summary:
     desc: 'Summary information'
     cmds:
+      - echo Go available {{.GO}}
+      - echo Python available {{.PYTHON}}
       - echo Docker available {{.DOCKER}}
+      - echo Node available {{.NODE}}
     silent: true
 
   check:
@@ -85,20 +95,15 @@ tasks:
     run: once
     desc: Execute prettier files
     cmds:
-      - >-
-        prettier --config=.github/linters/prettier.config.js
-        --ignore-path=.github/linters/.prettierignore
-        '**/*.{js?(on),ts?(x),scss,md,y?(a)ml,gql,graphql?(s),less,mjml}'
-        --write=true
-        --list-different
+      - task: prettier:all
 
   setup:
     desc: Setup dependences of project
     cmds:
       - task: python:setup
       - task: python:precommit
-      - task: yarn:setup
       - task: go:setup
+      - task: yarn:setup
       - task: git:setup
       - task: gitflow:setup
 
