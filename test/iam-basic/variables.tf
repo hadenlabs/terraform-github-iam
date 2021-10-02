@@ -10,13 +10,13 @@ variable "team" {
 variable "maintainers" {
   description = "This maintainers to create"
   type        = list(string)
-  default     = null
+  default     = []
 }
 
 variable "members" {
   description = "This members to create"
   type        = list(string)
-  default     = null
+  default     = []
 }
 
 variable "github" {

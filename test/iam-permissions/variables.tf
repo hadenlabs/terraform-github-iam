@@ -23,7 +23,7 @@ variable "team" {
 variable "maintainers" {
   description = "This maintainers to create"
   type        = list(string)
-  default     = null
+  default     = []
 }
 
 variable "members" {
@@ -38,5 +38,5 @@ variable "permissions" {
     repository = string
     permission = string
   }))
-  default = null
+  default = []
 }
