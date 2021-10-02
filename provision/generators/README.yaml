@@ -81,6 +81,14 @@ usage: |-
       providers = {
         github = github
       }
+
+      team        = {
+        "name" = "name-team"
+        "description = "team description"
+        "privacy" = "closed"
+      }
+      maintainers = ["user-github"]
+      members     = ["user-github"]
     }
   ```
 
