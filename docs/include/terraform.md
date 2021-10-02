@@ -29,9 +29,9 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_teams"></a> [teams](#input\_teams) | This teams to create | <pre>list(object({<br>    name        = string<br>    description = string<br>    privacy     = string<br>  }))</pre> | `null` | no |
-| <a name="input_permissions"></a> [permissions](#input\_permissions) | This permissions to repository | <pre>list(object({<br>    team       = string<br>    repository = string<br>    permission = string<br>  }))</pre> | `null` | no |
 | <a name="input_members"></a> [members](#input\_members) | This members to create | <pre>list(object({<br>    username = string<br>    role     = string<br>    team     = string<br>  }))</pre> | `null` | no |
+| <a name="input_permissions"></a> [permissions](#input\_permissions) | This permissions to repository | <pre>list(object({<br>    team       = string<br>    repository = string<br>    permission = string<br>  }))</pre> | `null` | no |
+| <a name="input_teams"></a> [teams](#input\_teams) | This teams to create | <pre>list(object({<br>    name        = string<br>    description = string<br>    privacy     = string<br>  }))</pre> | `null` | no |
 
 ## Outputs
 
