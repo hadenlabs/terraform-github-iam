@@ -47,7 +47,7 @@ repos:
       - id: fix-encoding-pragma
       - id: sort-simple-yaml
   - repo: https://github.com/hadenlabs/pre-commit-hooks
-    rev: 29c3f47f8fa0ec66d35ccbad761b7cf299e5ee19
+    rev: 6c173538c37aa802949cae5ff487d702319ba80a
     hooks:
       - id: do-not-commit
       - id: markdown-link-check
@@ -61,7 +61,7 @@ repos:
             .+\.tpl.sh$|
           )$
         args:
-          - --exclude=SC1072,SC1073,SC2068
+          - --exclude=SC1071,SC1073,SC2068
       - id: validate-toml
       - id: no-go-testing
       - id: golangci-lint
@@ -72,7 +72,6 @@ repos:
         args:
           - '--output-file=docs/include/terraform.md'
           - '--output-mode=replace'
-          - '--sort-by-type'
 
       - id: terraform-tflint
         args:
@@ -88,6 +87,4 @@ repos:
           - --path=.
           - --repo-config-path=.github/linters/.gitleaks.toml
           - --verbose
-      - id: prepare-commit-msg
-        stages: [prepare-commit-msg]
 
