@@ -1,3 +1,16 @@
+{{ defineDatasource "config" .Env.README_YAML | regexp.Replace ".*" "" -}} {{ defineDatasource "includes" .Env.README_INCLUDES | regexp.Replace ".*" "" -}}
+{{ if has (ds "config") "confluence" }}{{ $confluence := (ds "config").confluence -}}
+{{- if has $confluence "space" }} <!-- Space: {{ $confluence.space }} --> {{ end }}
+{{ if has $confluence "parent" }} <!-- Parent: {{ $confluence.parent }} --> {{- end -}}
+{{ if has $confluence "title" -}} <!-- Title: {{ $confluence.title }} --> {{ end }}
+{{ if has $confluence "images" -}}
+{{ range $image := $confluence.images -}}
+<!-- Attachment: {{ $image }} -->
+{{ end }}
+{{ end }}
+{{- end }}
+
+
 <!--
 
 
@@ -12,23 +25,14 @@
 
   -->
 
-{{ defineDatasource "config" .Env.README_YAML | regexp.Replace ".*" "" }} {{ defineDatasource "includes" .Env.README_INCLUDES | regexp.Replace ".*" "" }}
-
-{{ if has (ds "config") "confluence" }}
-{{ $confluence := (ds "config").confluence }}
-{{ if has $confluence "space" }} <!-- Space: {{ $confluence.space }} --> {{ end }}
-{{ if has $confluence "parent" }} <!-- Parent: {{ $confluence.parent }} --> {{ end }}
-{{ if has $confluence "title" }} <!-- Title: {{ $confluence.title }} --> {{ end }}
-{{ end }}
-
 
 {{ if has (ds "config") "badges" }}{{- range $badge := (ds "config").badges -}}{{ printf " [![%s](%s)](%s)" $badge.name $badge.image $badge.url }}{{ end }}{{ end }}
 
 # {{(ds "config").name}}{{ if gt (len (ds "config").name) 34 }}{{ print "\n\n" }}{{ end }}
 
-{{ if has (ds "config") "logo" }} ![{{(ds "config").name}}]({{ (ds "config").logo }}) {{- end -}}
+{{ if has (ds "config") "logo" -}} ![{{(ds "config").name}}]({{ (ds "config").logo }}) {{ end }}
 
-{{ if has (ds "config") "description" }} {{(ds "config").description }} {{ end }}
+{{ if has (ds "config") "description" -}} {{(ds "config").description }} {{ end }}
 
 {{ if has (ds "config") "screenshots" }}
 
@@ -39,6 +43,7 @@
 {{ end }}{{ end }}
 
 {{ if has (ds "config") "features" }}
+
 ## Features
 {{ range $feature := (ds "config").features }}{{printf "- %s\n" $feature}}{{ end }}
 {{ end }}
@@ -48,7 +53,6 @@
 ## Introduction
 
 {{ (ds "config").introduction -}} {{ end }}
-
 
 {{ if has (ds "config") "todo" }}
 

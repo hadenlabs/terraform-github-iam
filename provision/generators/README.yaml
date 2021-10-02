@@ -20,6 +20,10 @@ categories:
 email:
   support: support@hadenlabs.com
 
+confluence:
+  space: TerraformGithubIam
+  title: Project
+
 # Logo for this project
 #logo: docs/logo.png
 
@@ -37,6 +41,12 @@ badges:
   - name: Lint
     image: https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-iam/lint-code
     url: https://github.com/hadenlabs/terraform-github-iam/actions?workflow=lint-code
+  - name: CI
+    image: https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-iam/ci
+    url: https://github.com/hadenlabs/terraform-github-iam/actions?workflow=ci
+  - name: Test
+    image: https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-iam/test
+    url: https://github.com/hadenlabs/terraform-github-iam/actions?workflow=test
   - name: pre-commit
     image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
     url: https://github.com/pre-commit/pre-commit
@@ -51,7 +61,8 @@ requirements: |-
 
   This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
-  - [docker](https://www.docker.com)
+  - [Pyenv](https://github.com/pyenv/pyenv)
+  - [Docker](https://www.docker.com/)
   - [python](https://www.python.org)
   - [taskfile](https://github.com/go-task/task)
 
@@ -59,7 +70,6 @@ requirements: |-
 description: |-
 
   Terraform module to provision an github iam.
-
 
 # How to use this project
 usage: |-
