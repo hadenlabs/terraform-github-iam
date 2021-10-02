@@ -13,6 +13,7 @@ includes:
   mark: ./provision/task/mark.yml
   prettier: ./provision/task/prettier.yml
   sonar: ./provision/task/sonar.yml
+  ssh: ./provision/task/ssh.yml
 
 env:
   DOCKER:
