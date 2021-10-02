@@ -7,6 +7,16 @@
 # Name of this project
 name: terraform-github-iam
 
+# Tags of this project
+tags:
+  - template
+
+# Categories of this project
+categories:
+  - terraform-github
+  - github
+  - iam
+
 email:
   support: support@hadenlabs.com
 
@@ -37,9 +47,19 @@ badges:
     image: https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735
     url: https://keepachangelog.com
 
+requirements: |-
+
+  This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
+
+  - [docker](https://www.docker.com)
+  - [python](https://www.python.org)
+  - [taskfile](https://github.com/go-task/task)
+
 # Short description of this project
 description: |-
+
   Terraform module to provision an github iam.
+
 
 # How to use this project
 usage: |-
