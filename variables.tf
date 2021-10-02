@@ -18,3 +18,12 @@ variable "members" {
   type        = list(string)
   default     = null
 }
+
+variable "permissions" {
+  description = "Add permissions of repository for team"
+  type = list(object({
+    repository = string
+    permission = string
+  }))
+  default = null
+}
