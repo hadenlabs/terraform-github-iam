@@ -5,7 +5,7 @@ env:
 
 tasks:
   check:
-    desc: Validations dependences
+    desc: Exist git-chglog
     run: once
     deps:
       - task: check:go
@@ -45,7 +45,7 @@ tasks:
     desc: Generate tag changelog
     run: once
     cmds:
-      - git-chglog {{.APP_TAG}} --output {{.TMP_CHANGELOG_FILENAME}}
+      - git-chglog {{.APP_TAG}} > {{.TMP_CHANGELOG_FILENAME}}
     deps:
       - task: check:chglog
 
