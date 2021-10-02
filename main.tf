@@ -19,3 +19,10 @@ resource "github_team_membership" "members" {
   role       = "member"
   depends_on = [github_team.this]
 }
+
+resource "github_team_repository" "this" {
+  count      = length(var.permissions)
+  team_id    = github_team.this.id
+  repository = element(var.permissions, count.index).repository
+  permission = element(var.permissions, count.index).permission
+}

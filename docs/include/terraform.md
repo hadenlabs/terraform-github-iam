@@ -23,6 +23,7 @@ No modules.
 | [github_team.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team) | resource |
 | [github_team_membership.maintainers](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_membership) | resource |
 | [github_team_membership.members](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_membership) | resource |
+| [github_team_repository.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_repository) | resource |
 
 ## Inputs
 
@@ -30,6 +31,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_maintainers"></a> [maintainers](#input\_maintainers) | This members role maintainers | `list(string)` | `null` | no |
 | <a name="input_members"></a> [members](#input\_members) | This members role member | `list(string)` | `null` | no |
+| <a name="input_permissions"></a> [permissions](#input\_permissions) | Add permissions of repository for team | <pre>list(object({<br>    repository = string<br>    permission = string<br>  }))</pre> | `null` | no |
 | <a name="input_team"></a> [team](#input\_team) | This team to create | <pre>object({<br>    name        = string<br>    description = string<br>    privacy     = string<br>  })</pre> | n/a | yes |
 
 ## Outputs
