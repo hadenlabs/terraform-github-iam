@@ -22,8 +22,6 @@ func TestProjectWithBasic(t *testing.T) {
 	team := map[string]interface{}{
 		"name":        "test-developer",
 		"description": "test description",
-		"maintainers": maintainers,
-		"members":     members,
 		"privacy":     "closed",
 	}
 
