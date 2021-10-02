@@ -1,5 +1,7 @@
- <!-- Space: TerraformGithubIam -->
-<!-- Title: Project -->
+ <!-- Space: TerraformGithubIam --> 
+<!-- Title: Project --> 
+
+
 
 <!--
 
@@ -15,13 +17,28 @@
 
   -->
 
-[![Latest Release](https://img.shields.io/github/release/hadenlabs/terraform-github-iam)](https://github.com/hadenlabs/terraform-github-iam/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-iam/lint-code)](https://github.com/hadenlabs/terraform-github-iam/actions?workflow=lint-code) [![CI](https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-iam/ci)](https://github.com/hadenlabs/terraform-github-iam/actions?workflow=ci) [![Test](https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-iam/test)](https://github.com/hadenlabs/terraform-github-iam/actions?workflow=test) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com)
+
+ [![Latest Release](https://img.shields.io/github/release/hadenlabs/terraform-github-iam)](https://github.com/hadenlabs/terraform-github-iam/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-iam/lint-code)](https://github.com/hadenlabs/terraform-github-iam/actions?workflow=lint-code) [![CI](https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-iam/ci)](https://github.com/hadenlabs/terraform-github-iam/actions?workflow=ci) [![Test](https://img.shields.io/github/workflow/status/hadenlabs/terraform-github-iam/test)](https://github.com/hadenlabs/terraform-github-iam/actions?workflow=test) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com)
 
 # terraform-github-iam
 
-Terraform module to provision an github iam.
+
+
+
+Terraform module to provision an github iam. 
+
+
+
+
+
+
+
+
+
+
 
 ## Requirements
+
 
 This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
@@ -30,12 +47,16 @@ This is a list of plugins that need to be installed previously to enjoy all the 
 - [python](https://www.python.org)
 - [taskfile](https://github.com/go-task/task)
 
+
+
+
+
 ## Usage
 
 ```hcl
   module "main" {
     source = "hadenlabs/iam/github"
-    version = "0.1.1"
+    version = "0.2.0"
 
     providers = {
       github = github
@@ -53,6 +74,11 @@ This is a list of plugins that need to be installed previously to enjoy all the 
 
 Full working examples can be found in [examples](./examples) folder.
 
+
+
+
+
+
 ## Examples
 
 ### common
@@ -60,7 +86,7 @@ Full working examples can be found in [examples](./examples) folder.
 ```hcl
   module "main" {
       source = "hadenlabs/iam/github"
-      version = "0.1.1"
+      version = "0.2.0"
 
       providers = {
         github = github
@@ -82,7 +108,7 @@ Full working examples can be found in [examples](./examples) folder.
 ```hcl
   module "main" {
       source = "hadenlabs/iam/github"
-      version = "0.1.1"
+      version = "0.2.0"
 
       providers = {
         github = github
@@ -105,20 +131,21 @@ Full working examples can be found in [examples](./examples) folder.
 
 ```
 
- <!-- BEGIN_TF_DOCS -->
 
+
+ <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-| Name                                                                     | Version |
-| ------------------------------------------------------------------------ | ------- |
-| <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | >= 0.13 |
-| <a name="requirement_github"></a> [github](#requirement_github)          | >=4.5.0 |
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | >=4.5.0 |
 
 ## Providers
 
-| Name                                                      | Version |
-| --------------------------------------------------------- | ------- |
-| <a name="provider_github"></a> [github](#provider_github) | >=4.5.0 |
+| Name | Version |
+|------|---------|
+| <a name="provider_github"></a> [github](#provider\_github) | >=4.5.0 |
 
 ## Modules
 
@@ -127,7 +154,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-| --- | --- |
+|------|------|
 | [github_team.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team) | resource |
 | [github_team_membership.maintainers](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_membership) | resource |
 | [github_team_membership.members](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_membership) | resource |
@@ -136,22 +163,25 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-| --- | --- | --- | --- | :-: |
-| <a name="input_maintainers"></a> [maintainers](#input_maintainers) | This members role maintainers | `list(string)` | `null` | no |
-| <a name="input_members"></a> [members](#input_members) | This members role member | `list(string)` | `null` | no |
-| <a name="input_permissions"></a> [permissions](#input_permissions) | Add permissions of repository for team | <pre>list(object({<br> repository = string<br> permission = string<br> }))</pre> | `null` | no |
-| <a name="input_team"></a> [team](#input_team) | This team to create | <pre>object({<br> name = string<br> description = string<br> privacy = string<br> })</pre> | n/a | yes |
+|------|-------------|------|---------|:--------:|
+| <a name="input_maintainers"></a> [maintainers](#input\_maintainers) | This members role maintainers | `list(string)` | `null` | no |
+| <a name="input_members"></a> [members](#input\_members) | This members role member | `list(string)` | `null` | no |
+| <a name="input_permissions"></a> [permissions](#input\_permissions) | Add permissions of repository for team | <pre>list(object({<br>    repository = string<br>    permission = string<br>  }))</pre> | `null` | no |
+| <a name="input_team"></a> [team](#input\_team) | This team to create | <pre>object({<br>    name        = string<br>    description = string<br>    privacy     = string<br>  })</pre> | n/a | yes |
 
 ## Outputs
 
-| Name                                                                    | Description                            |
-| ----------------------------------------------------------------------- | -------------------------------------- |
-| <a name="output_maintainers"></a> [maintainers](#output_maintainers)    | instance of maintainers of team github |
-| <a name="output_members"></a> [members](#output_members)                | instance of members of team github     |
-| <a name="output_team"></a> [team](#output_team)                         | instance of team                       |
-| <a name="output_team_members"></a> [team_members](#output_team_members) | instance of members for team github    |
-
+| Name | Description |
+|------|-------------|
+| <a name="output_maintainers"></a> [maintainers](#output\_maintainers) | instance of maintainers of team github |
+| <a name="output_members"></a> [members](#output\_members) | instance of members of team github |
+| <a name="output_team"></a> [team](#output\_team) | instance of team |
+| <a name="output_team_members"></a> [team\_members](#output\_team\_members) | instance of members for team github |
 <!-- END_TF_DOCS -->
+
+
+
+
 
 ## Help
 
@@ -159,11 +189,14 @@ No modules.
 
 File a GitHub [issue](https://github.com/hadenlabs/terraform-github-iam/issues).
 
+
 ## Contributing
 
 ### Bug Reports & Feature Requests
 
+
 Please use the [issue tracker](https://github.com/hadenlabs/terraform-github-iam/issues) to report any bugs or file feature requests.
+
 
 ### Development
 
@@ -176,7 +209,10 @@ In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
 5.  Submit a **Pull Request** so that we can review your changes
 
+
+
 **NOTE:** Be sure to rebase the latest changes from "upstream" before making a pull request!
+
 
 ## Module Versioning
 
@@ -190,21 +226,37 @@ Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following co
 
 ### Backwards compatibility in `0.0.z` and `0.y.z` version
 
-- In the context of initial development, backwards compatibility in versions `0.0.z` is **not guaranteed** when `z` is increased. (Initial development)
-- In the context of pre-release, backwards compatibility in versions `0.y.z` is **not guaranteed** when `y` is increased. (Pre-release)
+- In the context of initial development, backwards compatibility in versions `0.0.z` is **not guaranteed** when `z` is
+  increased. (Initial development)
+- In the context of pre-release, backwards compatibility in versions `0.y.z` is **not guaranteed** when `y` is
+  increased. (Pre-release)
+
+
+
 
 ## Copyright
 
 Copyright © 2018-2021 [Hadenlabs](https://hadenlabs.com)
 
+
+
 ## Trademarks
 
 All other trademarks referenced herein are the property of their respective owners.
+
+
+
+
+
 
 ## License
 
 The code and styles are licensed under the LGPL-3.0 license [See project license.](LICENSE).
 
+
+
 ## Don't forget to 🌟 Star 🌟 the repo if you like terraform-github-iam
 
+
 [Your feedback is appreciated](https://github.com/hadenlabs/terraform-github-iam/issues)
+

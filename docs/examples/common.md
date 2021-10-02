@@ -3,7 +3,7 @@
 ```hcl
   module "main" {
       source = "hadenlabs/iam/github"
-      version = "0.1.1"
+      version = "0.2.0"
 
       providers = {
         github = github
@@ -25,7 +25,7 @@
 ```hcl
   module "main" {
       source = "hadenlabs/iam/github"
-      version = "0.1.1"
+      version = "0.2.0"
 
       providers = {
         github = github
