@@ -4,7 +4,7 @@ module "main" {
     github = github
   }
 
-  teams       = var.teams
+  team        = var.team
+  maintainers = var.maintainers
   members     = var.members
-  permissions = var.permissions
 }
