@@ -1,7 +1,7 @@
 {
   "name": "@hadenlabs/terraform-github-iam",
   "version": "0.0.0",
-  "description": "terraform aws rds",
+  "description": "terraform github iam",
   "author": "Luis Mayta <slovacus@gmail.com>",
   "license": "LGPL-3.0",
   "engines": {
@@ -33,11 +33,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hadenlabs/terraform-github-iam"
+    "url": "git+https://github.com/hadenlabs/terraform-github-iam.git"
   },
   "keywords": [
     "terraform",
-    "aws",
+    "github",
+    "iam",
     "hadenlabs"
   ],
   "bugs": {
@@ -46,33 +47,22 @@
   "homepage": "https://github.com/hadenlabs/terraform-github-iam#readme",
   "dependencies": {},
   "devDependencies": {
-    "@types/chai": "^4.2.21",
-    "@types/handlebars-helpers": "^0.5.3",
-    "@types/mocha": "^9.0.0",
-    "@types/node": "^16.4.2",
-    "@types/rimraf": "^3.0.1",
-    "@types/shelljs": "^0.8.9",
-    "@types/sinon": "^10.0.2",
-    "@typescript-eslint/eslint-plugin": "^4.28.4",
-    "@typescript-eslint/parser": "^4.28.4",
-    "chai": "^4.3.4",
+    "@types/rimraf": "^3.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "@typescript-eslint/parser": "^4.26.1",
     "cross-env": "^7.0.3",
-    "eslint": "^7.31.0",
+    "eslint": "^7.28.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-promise": "^5.1.0",
-    "handlebars-helpers": "^0.10.0",
-    "mocha": "^9.0.2",
     "node-plop": "^0.26.2",
     "plop": "^2.7.4",
     "prettier": "^2.3.2",
     "prettier-eslint": "^12.0.0",
-    "slugify": "^1.6.0",
+    "slugify": "^1.5.3",
     "rimraf": "^3.0.2",
-    "shelljs": "^0.8.4",
-    "sinon": "^11.1.1",
-    "ts-node": "^10.1.0",
+    "ts-node": "^10.0.0",
     "typescript": "^4.3.5"
   },
   "prettier": "./.github/linters/prettier.config.js"
