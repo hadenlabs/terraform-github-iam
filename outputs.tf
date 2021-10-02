@@ -1,19 +1,24 @@
-output "teams" {
-  description = "instance of teams"
+output "team" {
+  description = "instance of team"
   value       = github_team.this
 }
 
 output "members" {
-  description = "instance of members github"
-  value       = github_membership.this
+  description = "instance of members of team github"
+  value       = github_team_membership.members
+}
+
+output "maintainers" {
+  description = "instance of maintainers of team github"
+  value       = github_team_membership.maintainers
 }
 
 output "team_members" {
   description = "instance of members for team github"
-  value       = github_team_membership.this
+  value       = github_team_membership.members
 }
 
-output "permissions" {
-  description = "permissions of team repository"
-  value       = github_team_repository.this
-}
+# output "permissions" {
+#   description = "permissions of team repository"
+#   value       = github_team_repository.this
+# }
