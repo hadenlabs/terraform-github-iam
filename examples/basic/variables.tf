@@ -1,64 +1,22 @@
-variable "teams" {
-  description = "This teams to create"
-  type = list(object({
+variable "team" {
+  description = "This team to create"
+  type = object({
     name        = string
     description = string
     privacy     = string
-  }))
-  default = [
-    {
-      name        = "developers"
-      description = "Developers user"
-      privacy     = "closed"
-    },
-    {
-      name        = "backend"
-      description = "backends user"
-      privacy     = "closed"
-    },
-  ]
+  })
+}
+
+variable "maintainers" {
+  description = "This maintainers to create"
+  type        = list(string)
+  default     = null
 }
 
 variable "members" {
   description = "This members to create"
-  type = list(object({
-    username = string
-    role     = string
-    team     = string
-  }))
-  default = [
-    {
-      team     = "developers"
-      username = "luismayta"
-      role     = "maintainer"
-    },
-    {
-      team     = "backend"
-      username = "luismayta"
-      role     = "maintainer"
-    },
-  ]
-}
-
-variable "permissions" {
-  description = "This permissions to repository"
-  type = list(object({
-    team       = string
-    repository = string
-    permission = string
-  }))
-  default = [
-    {
-      team       = "backend"
-      repository = "repository-name"
-      permission = "admin"
-    },
-    {
-      team       = "developers"
-      repository = "repository-name"
-      permission = "admin"
-    },
-  ]
+  type        = list(string)
+  default     = null
 }
 
 variable "github" {
