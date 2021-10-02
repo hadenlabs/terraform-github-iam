@@ -10,13 +10,13 @@ variable "team" {
 variable "maintainers" {
   description = "This members role maintainers"
   type        = list(string)
-  default     = null
+  default     = []
 }
 
 variable "members" {
   description = "This members role member"
   type        = list(string)
-  default     = null
+  default     = []
 }
 
 variable "permissions" {
@@ -25,5 +25,5 @@ variable "permissions" {
     repository = string
     permission = string
   }))
-  default = null
+  default = []
 }
