@@ -13,19 +13,18 @@ func TestProjectWithBasic(t *testing.T) {
 		"organization": os.Getenv("GITHUB_ORGANIZATION"),
 		"token":        os.Getenv("GITHUB_TOKEN"),
 	}
-	teams := []map[string]interface{}{
-		{
-			"name":        "test-developer",
-			"description": "test description",
-			"privacy":     "closed",
-		},
+	maintainers := []string{
+		"luismayta",
 	}
-	members := []map[string]interface{}{
-		{
-			"username": "luismayta",
-			"role":     "admin",
-			"team":     "test-developer",
-		},
+	members := []string{
+		"dum-u",
+	}
+	team := map[string]interface{}{
+		"name":        "test-developer",
+		"description": "test description",
+		"maintainers": maintainers,
+		"members":     members,
+		"privacy":     "closed",
 	}
 
 	terraformOptions := &terraform.Options{
@@ -33,9 +32,10 @@ func TestProjectWithBasic(t *testing.T) {
 		TerraformDir: "iam-basic",
 		Upgrade:      true,
 		Vars: map[string]interface{}{
-			"github":  github,
-			"teams":   teams,
-			"members": members,
+			"github":      github,
+			"team":        team,
+			"maintainers": maintainers,
+			"members":     members,
 		},
 	}
 

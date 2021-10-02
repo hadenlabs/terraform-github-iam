@@ -25,9 +25,9 @@ No resources.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_github"></a> [github](#input\_github) | vars for github | <pre>object({<br>    token        = string<br>    organization = string<br>  })</pre> | n/a | yes |
-| <a name="input_members"></a> [members](#input\_members) | This members to create | `list(any)` | `null` | no |
-| <a name="input_permissions"></a> [permissions](#input\_permissions) | This permissions to repository | `list(any)` | `null` | no |
-| <a name="input_teams"></a> [teams](#input\_teams) | This teams to create | `list(any)` | `null` | no |
+| <a name="input_maintainers"></a> [maintainers](#input\_maintainers) | This maintainers to create | `list(string)` | `null` | no |
+| <a name="input_members"></a> [members](#input\_members) | This members to create | `list(string)` | `null` | no |
+| <a name="input_team"></a> [team](#input\_team) | This team to create | <pre>object({<br>    name        = string<br>    description = string<br>    privacy     = string<br>  })</pre> | n/a | yes |
 
 ## Outputs
 
