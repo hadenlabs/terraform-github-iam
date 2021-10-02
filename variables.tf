@@ -1,29 +1,20 @@
-variable "teams" {
-  description = "This teams to create"
-  type = list(object({
+variable "team" {
+  description = "This team to create"
+  type = object({
     name        = string
     description = string
     privacy     = string
-  }))
-  default = null
+  })
+}
+
+variable "maintainers" {
+  description = "This members role maintainers"
+  type        = list(string)
+  default     = null
 }
 
 variable "members" {
-  description = "This members to create"
-  type = list(object({
-    username = string
-    role     = string
-    team     = string
-  }))
-  default = null
-}
-
-variable "permissions" {
-  description = "This permissions to repository"
-  type = list(object({
-    team       = string
-    repository = string
-    permission = string
-  }))
-  default = null
+  description = "This members role member"
+  type        = list(string)
+  default     = null
 }
