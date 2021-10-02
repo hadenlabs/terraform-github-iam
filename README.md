@@ -40,6 +40,14 @@ This is a list of plugins that need to be installed previously to enjoy all the 
     providers = {
       github = github
     }
+
+    team        = {
+      "name" = "name-team"
+      "description = "team description"
+      "privacy" = "closed"
+    }
+    maintainers = ["user-github"]
+    members     = ["user-github"]
   }
 ```
 
@@ -127,27 +135,26 @@ No modules.
 
 | Name | Type |
 | --- | --- |
-| [github_membership.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/membership) | resource |
 | [github_team.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team) | resource |
-| [github_team_membership.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_membership) | resource |
-| [github_team_repository.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_repository) | resource |
+| [github_team_membership.maintainers](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_membership) | resource |
+| [github_team_membership.members](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_membership) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 | --- | --- | --- | --- | :-: |
-| <a name="input_teams"></a> [teams](#input_teams) | This teams to create | <pre>list(object({<br> name = string<br> description = string<br> privacy = string<br> }))</pre> | `null` | no |
-| <a name="input_permissions"></a> [permissions](#input_permissions) | This permissions to repository | <pre>list(object({<br> team = string<br> repository = string<br> permission = string<br> }))</pre> | `null` | no |
-| <a name="input_members"></a> [members](#input_members) | This members to create | <pre>list(object({<br> username = string<br> role = string<br> team = string<br> }))</pre> | `null` | no |
+| <a name="input_maintainers"></a> [maintainers](#input_maintainers) | This members role maintainers | `list(string)` | `null` | no |
+| <a name="input_members"></a> [members](#input_members) | This members role member | `list(string)` | `null` | no |
+| <a name="input_team"></a> [team](#input_team) | This team to create | <pre>object({<br> name = string<br> description = string<br> privacy = string<br> })</pre> | n/a | yes |
 
 ## Outputs
 
-| Name                                                                    | Description                         |
-| ----------------------------------------------------------------------- | ----------------------------------- |
-| <a name="output_members"></a> [members](#output_members)                | instance of members github          |
-| <a name="output_permissions"></a> [permissions](#output_permissions)    | permissions of team repository      |
-| <a name="output_team_members"></a> [team_members](#output_team_members) | instance of members for team github |
-| <a name="output_teams"></a> [teams](#output_teams)                      | instance of teams                   |
+| Name                                                                    | Description                            |
+| ----------------------------------------------------------------------- | -------------------------------------- |
+| <a name="output_maintainers"></a> [maintainers](#output_maintainers)    | instance of maintainers of team github |
+| <a name="output_members"></a> [members](#output_members)                | instance of members of team github     |
+| <a name="output_team"></a> [team](#output_team)                         | instance of team                       |
+| <a name="output_team_members"></a> [team_members](#output_team_members) | instance of members for team github    |
 
 <!-- END_TF_DOCS -->
 
